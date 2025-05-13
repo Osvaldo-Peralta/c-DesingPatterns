@@ -1,6 +1,9 @@
 #include "Waitress.h"
 #include <iostream>
 
+#define GREEN "\033[32m"
+#define RESET "\033[0m"
+
 Waitress::Waitress(PancakeHouseMenu &pancakeHouseMenu, DinerMenu &dinerMenu)
     : pancakeHouseMenu(pancakeHouseMenu), dinerMenu(dinerMenu) {}
 
@@ -9,13 +12,13 @@ void Waitress::printMenu()
     Iterator *pancakeIterator = pancakeHouseMenu.createIterator();
     Iterator *dinerIterator = dinerMenu.createIterator();
 
-    std::cout << "MENU\n----\nBREAKFAST" << std::endl;
+    cout << "MENU\n----\nBREAKFAST" << endl;
     printMenu(pancakeIterator);
 
-    std::cout << "\nLUNCH" << std::endl;
+    cout << "\nLUNCH" << endl;
     printMenu(dinerIterator);
 
-    delete pancakeIterator; // Liberar memoria si createIterator() usa new
+    delete pancakeIterator; // Liberar memoria
     delete dinerIterator;
 }
 
@@ -26,9 +29,9 @@ void Waitress::printMenu(Iterator *iterator)
         MenuItem *menuItem = iterator->next();
         if (menuItem)
         {
-            std::cout << menuItem->getName() << ", $";
-            std::cout << menuItem->getPrecio() << " -- ";
-            std::cout << menuItem->getDescription() << std::endl;
+            cout << menuItem->getName() << ", $";
+            cout << menuItem->getPrecio() << GREEN << " -- " << RESET;
+            cout << menuItem->getDescription() << endl;
         }
     }
 }

@@ -12,22 +12,9 @@ private:
     size_t position;
 
 public:
-    explicit PancakeHouseIterator(vector<MenuItem> &items)
-        : menuItems(items), position(0) {}
-
-    bool hasNext() const override
-    {
-        return position < menuItems.size();
-    }
-
-    MenuItem *next() override
-    {
-        if (hasNext())
-        {
-            return &menuItems[position++];
-        }
-        return nullptr;
-    }
+    explicit PancakeHouseIterator(std::vector<MenuItem> &items);
+    bool hasNext() const override;
+    MenuItem *next() override;
 };
 
 #endif

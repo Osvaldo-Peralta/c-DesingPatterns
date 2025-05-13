@@ -9,7 +9,7 @@ PancakeHouseMenu::PancakeHouseMenu()
     addItem("Waffles", "Waffles with your choice of blueberries or strawberries", true, 3.59);
 }
 
-void PancakeHouseMenu::addItem(std::string name, std::string description, bool vegetarian, double precio)
+void PancakeHouseMenu::addItem(string name, string description, bool vegetarian, double precio)
 {
     MenuItem menuItem(name, description, vegetarian, precio);
     menuItems.push_back(menuItem);
@@ -33,14 +33,14 @@ void PancakeHouseMenu::prinMenu()
         if (item)
         {
             aux++;
-            std::cout << "Nombre: " << item->getName() << std::endl;
-            std::cout << "Descripcion: " << item->getDescription() << std::endl;
-            std::cout << "Es vegetariano: " << (item->isVegetarian() ? "Si" : "No") << std::endl;
-            std::cout << "Su precio es de $" << item->getPrecio() << std::endl;
+            cout << "Nombre: " << item->getName() << endl;
+            cout << "Descripcion: " << item->getDescription() << endl;
+            cout << "Es vegetariano: " << (item->isVegetarian() ? "Si" : "No") << endl;
+            cout << "Su precio es de $" << item->getPrecio() << endl;
 
             if (aux < 4)
             {
-                std::cout << "------------------------------" << std::endl;
+                cout << "------------------------------" << endl;
             }
         }
     }

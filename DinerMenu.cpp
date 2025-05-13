@@ -54,11 +54,11 @@ void DinerMenu::printMenu() const
         MenuItem *item = it->next();
         if (item)
         {
-            std::cout << "Nombre: " << item->getName() << std::endl;
-            std::cout << "Descripción: " << item->getDescription() << std::endl;
-            std::cout << "Es Vegetariano: " << (item->isVegetarian() ? "Sí" : "No") << std::endl;
-            std::cout << "Precio: $" << item->getPrecio() << std::endl;
-            std::cout << "------------------------------" << std::endl;
+            cout << "Nombre: " << item->getName() << endl;
+            cout << "Descripción: " << item->getDescription() << endl;
+            cout << "Es Vegetariano: " << (item->isVegetarian() ? "Sí" : "No") << endl;
+            cout << "Precio: $" << item->getPrecio() << endl;
+            cout << "------------------------------" << endl;
         }
     }
     delete it; // Liberamos memoria

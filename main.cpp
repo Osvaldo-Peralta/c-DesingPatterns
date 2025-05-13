@@ -1,10 +1,9 @@
-#include "MenuItem.h"
 #include "DinerMenu.h"
 #include "PancakeHouseMenu.h"
 #include "Waitress.h"
 
-#define GREEN "\033[32m"
-#define RESET "\033[0m"
+// #define GREEN "\033[32m"
+// #define RESET "\033[0m"
 
 int main()
 {
@@ -24,6 +23,6 @@ int main()
     cout << GREEN << "\n-----------------Menu de Diner-------------------------\n"
          << RESET << endl;
     dinerMenu.printMenu();
-    S*/
+    */
     return 0;
 }

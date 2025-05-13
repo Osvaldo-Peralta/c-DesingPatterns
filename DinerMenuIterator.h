@@ -12,17 +12,10 @@ private:
     int size; // Cantidad de elementos válidos en el menú
 
 public:
-    DinerMenuIterator(MenuItem *items[], int size) : items(items), position(0), size(size) {}
+    DinerMenuIterator(MenuItem *items[], int size);
+    bool hasNext() const override;
 
-    bool hasNext() const override
-    {
-        return (position < size) && (items[position] != nullptr);
-    }
-
-    MenuItem *next() override
-    {
-        return hasNext() ? items[position++] : nullptr;
-    }
+    MenuItem *next() override;
 };
 
-#endif // DINER_MENU_ITERATOR_H
+#endif
