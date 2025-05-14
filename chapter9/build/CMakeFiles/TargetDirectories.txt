@@ -1,3 +1,0 @@
-/home/osvaldo/pruebas/librerias/capitulo9/chapter9/build/CMakeFiles/menu.dir
-/home/osvaldo/pruebas/librerias/capitulo9/chapter9/build/CMakeFiles/edit_cache.dir
-/home/osvaldo/pruebas/librerias/capitulo9/chapter9/build/CMakeFiles/rebuild_cache.dir
