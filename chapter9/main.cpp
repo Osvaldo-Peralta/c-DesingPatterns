@@ -1,28 +1,17 @@
 #include "DinerMenu.h"
 #include "PancakeHouseMenu.h"
+#include "CafeMenu.h"
 #include "Waitress.h"
-
-// #define GREEN "\033[32m"
-// #define RESET "\033[0m"
 
 int main()
 {
 
-    PancakeHouseMenu pancakeHouseMenu;
+    PancakeHouseMenu pancakeMenu;
     DinerMenu dinerMenu;
+    CafeMenu cafeMenu;
 
-    Waitress waitress(pancakeHouseMenu, dinerMenu);
-    waitress.printMenu(); // Imprime ambos menus
+    Waitress waiter(pancakeMenu.begin(), pancakeMenu.end(), dinerMenu.begin(), dinerMenu.end(), cafeMenu.begin(), cafeMenu.end());
+    waiter.printAllMenus();
 
-    /*
-    PancakeHouseMenu pancakeHouse;
-    DinerMenu dinerMenu;
-
-    cout << GREEN << "\n-----------------Menu de PancakeHouse------------------------" << RESET << endl;
-    pancakeHouse.prinMenu();
-    cout << GREEN << "\n-----------------Menu de Diner-------------------------\n"
-         << RESET << endl;
-    dinerMenu.printMenu();
-    */
     return 0;
 }
