@@ -2,7 +2,7 @@
 TARGET = main
 
 # Archivos fuente
-SRC = main.cpp DinerMenu.cpp MenuItem.cpp PancakeHouseMenu.cpp PancakeHouseIterator.cpp DinerMenuIterator.cpp Waitress.cpp
+SRC = main.cpp DinerMenu.cpp MenuItem.cpp PancakeHouseMenu.cpp CafeMenu.cpp
 
 # Archivos objeto
 OBJ = $(SRC:.cpp=.o)
