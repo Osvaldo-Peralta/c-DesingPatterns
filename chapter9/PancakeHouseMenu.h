@@ -1,20 +1,24 @@
 #ifndef PANCAKEHOUSEMENU_H
 #define PANCAKEHOUSEMENU_H
 
-#include "MenuItem.h"
 #include <vector>
-#include "PancakeHouseIterator.h"
+#include "Menu.h"
+#include "MenuItem.h"
 
-class PancakeHouseMenu
+class PancakeHouseMenu : public Menu<vector<MenuItem>::iterator>
 {
 private:
     vector<MenuItem> menuItems;
 
 public:
+    using Iterator = vector<MenuItem>::iterator; // Alias
+
     PancakeHouseMenu();
     void addItem(string name, string description, bool vegetarian, double precio);
-    Iterator *createIterator(); // Metodo que genera el iterador
-    void prinMenu();
+
+    // Implementacion de la nueva interfaz Menu
+    Iterator begin() { return menuItems.begin(); }
+    Iterator end() { return menuItems.end(); }
 };
 
 #endif
