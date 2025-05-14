@@ -3,9 +3,9 @@
 ## Comandos necesarios para compilar y ejecutar el programa
 Serán necesarios 2 comandos principalmente:
 ### Para compilar el programa
-Dentro del directorio de por ejemplo chapter9, en donde te encontraras con los directorios `src`, `build` y `includes`.
+Dentro del directorio de por ejemplo chapter9, en donde te encontraras con los directorios `src`, y `includes`.
 
-Entra al directorio `build`con el comando `cd build`.
+Crea y entra al directorio `build`con el comando `mkdir build && cd build`.
 
 Entonces ejecuta el siguiente comando para configurar el programa:
 ```
