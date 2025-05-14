@@ -1,0 +1,49 @@
+# Ignorar TODOS los directorios build en cualquier subdirectorio
+**/build/
+
+# Archivos generados por CMake (en cualquier ubicación)
+**/CMakeCache.txt
+**/CMakeFiles/
+**/*.cmake
+**/Makefile
+**/cmake_install.cmake
+
+# Archivos generados por CMake
+build/
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+*.cmake
+*.make
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# Ejecutables y bibliotecas generados
+*.exe
+*.out
+*.a
+*.so
+*.dll
+*.dylib
+*.make
+
+# Directorios y archivos temporales de IDEs/Editores
+/build/
+.vscode/
+.idea/
+*.user
+*.sln
+*.vcxproj*
+*.suo
+*.opensdf
+*.sdf
+
+# Archivos objeto y temporales de compilación
+*.o
+*.obj
+*.gcno
+*.gcda
+*.ilk
+*.pdb
