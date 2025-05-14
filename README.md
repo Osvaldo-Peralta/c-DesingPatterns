@@ -12,7 +12,7 @@ Entonces ejecuta el siguiente comando para configurar el programa:
 cmake ..
 ```
 Promp esperado:
-```powershell
+```bash
 $ cmake ..
 -- The C compiler identification is GNU 13.3.0
 -- The CXX compiler identification is GNU 13.3.0
@@ -36,7 +36,7 @@ Una vez finalizado el proceso, para compilar deberas ejecutar el siguiente coman
 make
 ```
 Promp esperado:
-```powershell
+```bash
 make
 [ 16%] Building CXX object CMakeFiles/main.dir/src/CafeMenu.cpp.o
 [ 33%] Building CXX object CMakeFiles/main.dir/src/DinerMenu.cpp.o
