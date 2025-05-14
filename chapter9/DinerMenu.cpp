@@ -39,27 +39,3 @@ void DinerMenu::addItem(string name, string description, bool isVegetarian, doub
         numberOfItems++;
     }
 }
-
-Iterator *DinerMenu::createIterator() const
-{
-    return new DinerMenuIterator((MenuItem **)menuItems, numberOfItems);
-}
-
-// Recorremos y mostramos el menu ahora implementanto createIterator
-void DinerMenu::printMenu() const
-{
-    Iterator *it = createIterator();
-    while (it->hasNext())
-    {
-        MenuItem *item = it->next();
-        if (item)
-        {
-            cout << "Nombre: " << item->getName() << endl;
-            cout << "Descripción: " << item->getDescription() << endl;
-            cout << "Es Vegetariano: " << (item->isVegetarian() ? "Sí" : "No") << endl;
-            cout << "Precio: $" << item->getPrecio() << endl;
-            cout << "------------------------------" << endl;
-        }
-    }
-    delete it; // Liberamos memoria
-}

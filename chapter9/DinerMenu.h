@@ -2,23 +2,26 @@
 #define DINERMENU_H
 
 #include "MenuItem.h"
-#include "Iterator.h"
-#include "DinerMenuIterator.h"
+#include "Menu.h"
+using namespace std;
 
-class DinerMenu
+class DinerMenu : public Menu<MenuItem **>
 {
 private:
-    static const int MAX_ITEMS = 6;
-    int numberOfItems = 0;
+    static constexpr int MAX_ITEMS = 6;
     MenuItem *menuItems[MAX_ITEMS]; // Arreglo de punteros a MenuItem
+    int numberOfItems = 0;
 
 public:
-    DinerMenu();
-    ~DinerMenu(); // Destructor para liberar memoria
+    using Iterator = MenuItem **;
 
-    void addItem(string name, string description, bool vegetarian, double precio);
-    Iterator *createIterator() const; // Metodo que generara el Iterador
-    void printMenu() const;
+    ~DinerMenu(); // Destructor para liberar memoria
+    DinerMenu();
+    void addItem(string name, string description, bool vegetarian, double price);
+
+    // Adaptamos los iteradores para que sean compatibles con Menu
+    Iterator begin() { return &menuItems[0]; }           // Direccion del primer elemento
+    Iterator end() { return &menuItems[numberOfItems]; } // Direccion de la ultima posicion
 };
 
 #endif
