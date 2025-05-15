@@ -1,0 +1,21 @@
+/*
+> Aqui definiremos la interfaz State de la cual heredaran los estados de GumballMachine
+*/
+
+// Declaración anticipada de GumballMachine para evitar problemas de memoria y punteros.
+#ifndef STATE_H
+#define STATE_H
+class GumballMachine;
+
+class State
+{
+
+public:
+    virtual ~State() = default;       // Destructor que se puede heredar. | debe implementarse por defecto
+    virtual void insertQuarter() = 0; // Insertar moneda
+    virtual void ejectQuarter() = 0;  // Expulsar moneda
+    virtual void turnCrank() = 0;     // Girar manivela
+    virtual void dispense() = 0;      // Depachar
+};
+
+#endif
