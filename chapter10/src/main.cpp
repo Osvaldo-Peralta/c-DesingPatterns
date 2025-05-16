@@ -6,19 +6,19 @@ int main()
     using std::cout, std::endl;
     // GumballMachine gumballMachine(5);
     GumballMachine *gumballMachine = new GumballMachine(5);
+    cout << "---- Estado Inicial de la Maquina ----" << endl;
     gumballMachine->printStatus();
 
-    cout << "Caso 1: Insertar, Activar" << endl;
     gumballMachine->insertQuarter();
     gumballMachine->turnCrank();
 
-    cout << "-----------------------------------------------------" << endl;
+    cout << "-------------------------------------------" << endl;
     gumballMachine->printStatus();
 
     gumballMachine->insertQuarter();
     gumballMachine->ejectQuarter();
     gumballMachine->turnCrank();
-    cout << "-----------------------------------------------------" << endl;
+    cout << "-------------------------------------------" << endl;
     gumballMachine->printStatus();
 
     gumballMachine->insertQuarter();
@@ -26,7 +26,7 @@ int main()
     gumballMachine->insertQuarter();
     gumballMachine->turnCrank();
     gumballMachine->ejectQuarter();
-    cout << "-----------------------------------------------------" << endl;
+    cout << "-------------------------------------------" << endl;
     gumballMachine->printStatus();
 
     gumballMachine->insertQuarter();
@@ -37,7 +37,7 @@ int main()
     gumballMachine->insertQuarter();
     gumballMachine->turnCrank();
 
-    cout << "-----------------------------------------------------" << endl;
+    cout << "-------------------------------------------" << endl;
     gumballMachine->printStatus();
 
     delete gumballMachine;
