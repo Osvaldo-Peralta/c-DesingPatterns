@@ -4,6 +4,7 @@
 #include "State.h"
 #include "GumballMachine.h"
 #include <iostream>
+#include <random>
 
 class HasQuarterState : public State
 {
@@ -26,8 +27,16 @@ public:
     }
     void turnCrank() override
     {
+        int numeroAleatorio = machine.generateRandomNumber();
         std::cout << "Giraste la manivela" << std::endl;
-        machine.setState(machine.getSoldState());
+        if (numeroAleatorio == 10 && machine.getCount() > 0)
+        {
+            machine.setState(machine.getWinnerState());
+        }
+        else
+        {
+            machine.setState(machine.getSoldState());
+        }
     }
 
     void dispense() override
