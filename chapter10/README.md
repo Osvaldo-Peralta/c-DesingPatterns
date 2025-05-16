@@ -1,3 +1,13 @@
+# State Desing Pattern
+Este ejemplo implementa el patrón de diseño **`State`**, el cual permite que un objeto altere su comportamiento cuando cambia su estado interno.
+Dicho objeto parecera cambiar de clase.
+
+## ¿Como funciona?
+Este patrón de diseño encapsula el estado en clases separadas y delega al objeto que representa el estado actual.
+
+## Ejemplo: Maquina de chicles
+En este ejercicio de ejemplo, cuando la maquina de chicles se encuentra en un estado `NoQuarterState` y se inserta una moneda, el comportamiento es *Acepta la moneda*, muy diferente a cuando esta en un estado `HasQuarterState` en donde la maquina *rechaza la moneda*.
+
 ## Ejecución del programa
 Se espera que el comportamiento del programa sea el siguiente:
 ```bash
