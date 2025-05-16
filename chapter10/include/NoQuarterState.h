@@ -33,6 +33,11 @@ public:
         std::cout << "Necesitas pagar primero" << std::endl;
     }
 
+    void refill() override
+    {
+        // No hace nada pero esta obligado a implementarse
+    }
+
     const char *getName() const override
     {
         return "Esperando Moneda"; // Nombre legible y obtenible

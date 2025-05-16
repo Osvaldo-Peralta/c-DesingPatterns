@@ -56,6 +56,11 @@ public:
         }
     }
 
+    void refill() override
+    {
+        // No hace nada
+    }
+
     const char *getName() const override
     {
         return "Usuario Ganador";

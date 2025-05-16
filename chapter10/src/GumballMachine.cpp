@@ -38,6 +38,15 @@ int GumballMachine::generateRandomNumber()
     return distribucion(gen);
 }
 
+void GumballMachine::refill(int count)
+{
+    this->count += count;
+    std::cout << "---- La maquina de chicles ha sido rellenada. el nuevo inventario es: "
+              << this->count << " ----"
+              << std::endl;
+    currentState->refill();
+}
+
 void GumballMachine::printStatus() const
 {
     using std::cout, std::endl;

@@ -57,6 +57,7 @@ public:
     int getCount() const { return count; } // Metodo para obtener el inventario
     void printStatus() const;              // Metodo para mostrar el estado de la maquina
     int generateRandomNumber();            // Metodo para obtener numero aleatorio
+    void refill(int cantidad);
 };
 
 #endif

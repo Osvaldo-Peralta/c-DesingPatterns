@@ -43,6 +43,11 @@ public:
         }
     }
 
+    void refill() override
+    {
+        // No hace nada pero esta obligado a implementarse
+    }
+
     const char *getName() const override
     {
         return "Despachando chicle";

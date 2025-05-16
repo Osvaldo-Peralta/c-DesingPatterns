@@ -44,6 +44,11 @@ public:
         std::cout << "No se despacha ningun chicle" << std::endl;
     }
 
+    void refill() override
+    {
+        // No hace nada pero esta obligado a implementarse
+    }
+
     const char *getName() const override
     {
         return "Moneda Insertada";

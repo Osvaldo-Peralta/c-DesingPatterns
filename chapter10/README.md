@@ -1,58 +1,65 @@
 ## Ejecución del programa
 Se espera que el comportamiento del programa sea el siguiente:
 ```bash
-$ ./main
+/chapter10/build$ ./main
+
+---- Estado Inicial de la Maquina ----
 Mighty Gumball, Inc.
-Java-enabled Standing Gumball Model #2004
-Inventario: 5gumballs
-Estado: La maquina esta esperando una moneda
------------------------------------------------------
-Caso 1: Insertar, Activar
-Insertaste un cuarter
-Has activado la palanca...
-Un chicle caera por el espacio de la banda
------------------------------------------------------
+C++-enabled Standing Gumball Model #2004
+Inventario: 5 gumballs
+Estado: Esperando Moneda
+----------------------------
+Insertaste una moneda
+Giraste la manivela
+Un chicle sale rodando....
+-------------------------------------------
 Mighty Gumball, Inc.
-Java-enabled Standing Gumball Model #2004
-Inventario: 4gumballs
-Estado: La maquina esta esperando una moneda
------------------------------------------------------
-Insertaste un cuarter
-Regresa la moneda
-Activaste la palanca pero no hay moneda
------------------------------------------------------
+C++-enabled Standing Gumball Model #2004
+Inventario: 4 gumballs
+Estado: Esperando Moneda
+----------------------------
+Insertaste una moneda
+Moneda devuelta
+Giraste la manivela pero no insertaste la moneda
+Necesitas pagar primero
+-------------------------------------------
 Mighty Gumball, Inc.
-Java-enabled Standing Gumball Model #2004
-Inventario: 4gumballs
-Estado: La maquina esta esperando una moneda
------------------------------------------------------
-Insertaste un cuarter
-Has activado la palanca...
-Un chicle caera por el espacio de la banda
-Insertaste un cuarter
-Has activado la palanca...
-Un chicle caera por el espacio de la banda
+C++-enabled Standing Gumball Model #2004
+Inventario: 4 gumballs
+Estado: Esperando Moneda
+----------------------------
+Insertaste una moneda
+Giraste la manivela
+Un chicle sale rodando....
+Insertaste una moneda
+Giraste la manivela
+Un chicle sale rodando....
+--------------------------------
+ERES EL GANADOR!! Te llevas 2 chicles por el precio de 1
+--------------------------------
+Un chicle sale rodando....
 No has insertado una moneda
------------------------------------------------------
+-------------------------------------------
 Mighty Gumball, Inc.
-Java-enabled Standing Gumball Model #2004
-Inventario: 2gumballs
-Estado: La maquina esta esperando una moneda
------------------------------------------------------
-Insertaste un cuarter
-No puedes insertar otro cuarter
-Has activado la palanca...
-Un chicle caera por el espacio de la banda
-Insertaste un cuarter
-Has activado la palanca...
-Un chicle caera por el espacio de la banda
-Oops, Nos quedamos sin chicles
-No puedes insertar un cuarter, la maquina se agoto
-Activaste la palanca pero no hay chicles
------------------------------------------------------
+C++-enabled Standing Gumball Model #2004
+Inventario: 1 gumballs
+Estado: Esperando Moneda
+----------------------------
+---- La maquina de chicles ha sido rellenada. el nuevo inventario es: 5 ----
+Insertaste una moneda
+No puedes insertar otra moneda
+Giraste la manivela
+Un chicle sale rodando....
+Insertaste una moneda
+Giraste la manivela
+Un chicle sale rodando....
+Insertaste una moneda
+Giraste la manivela
+Un chicle sale rodando....
+-------------------------------------------
 Mighty Gumball, Inc.
-Java-enabled Standing Gumball Model #2004
-Inventario: 0gumballs
-Estado: La maquina esta vacia.....
------------------------------------------------------
+C++-enabled Standing Gumball Model #2004
+Inventario: 2 gumballs
+Estado: Esperando Moneda
+----------------------------
 ```

@@ -34,6 +34,11 @@ public:
         std::cout << "No se dispenso ningun chicle. Inventario vacio" << std::endl;
     }
 
+    void refill() override
+    {
+        machine.setState(machine.getNoQuarterState());
+    }
+
     const char *getName() const override
     {
         return "\033[31mInventario Agotado\033[0m";
