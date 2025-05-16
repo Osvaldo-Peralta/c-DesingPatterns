@@ -5,7 +5,7 @@
 #include "SoldOutState.h"
 #include "WinnerState.h"
 
-GumballMachine::GumballMachine(int numberOfGumballs) : count(numberOfGumballs)
+GumballMachine::GumballMachine(int numberOfGumballs) : gen(rd()), count(numberOfGumballs), distribucion(1, 10)
 {
     // Inicializamos todos los estados
 
@@ -13,6 +13,7 @@ GumballMachine::GumballMachine(int numberOfGumballs) : count(numberOfGumballs)
     hasQuarterState = std::make_unique<HasQuarterState>(*this);
     soldOutState = std::make_unique<SoldOutState>(*this);
     soldState = std::make_unique<SoldState>(*this);
+    winnerState = std::make_unique<WinnerState>(*this);
 
     // Estado actual
     currentState = (count > 0) ? noQuarterState.get() : soldOutState.get();
@@ -27,9 +28,14 @@ void GumballMachine::releaseBall()
 {
     if (count > 0)
     {
-        std::cout << "Un chicle sale rodando" << std::endl;
+        std::cout << "Un chicle sale rodando...." << std::endl;
         count--;
     }
+}
+
+int GumballMachine::generateRandomNumber()
+{
+    return distribucion(gen);
 }
 
 void GumballMachine::printStatus() const
@@ -37,7 +43,7 @@ void GumballMachine::printStatus() const
     using std::cout, std::endl;
 
     cout << "Mighty Gumball, Inc.\n"
-         << "Java-enabled Standing Gumball Model #2004" << endl;
+         << "C++-enabled Standing Gumball Model #2004" << endl;
     cout << "Inventario: " << GumballMachine::getCount() << " gumballs" << endl;
     cout << "Estado: " << currentState->getName() << endl;
     cout << "----------------------------" << endl;
