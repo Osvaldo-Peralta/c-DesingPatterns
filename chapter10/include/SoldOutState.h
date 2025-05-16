@@ -36,7 +36,7 @@ public:
 
     const char *getName() const override
     {
-        return "Inventario Agotado";
+        return "\033[31mInventario Agotado\033[0m";
     }
 };
 
