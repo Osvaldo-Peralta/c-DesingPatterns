@@ -44,7 +44,14 @@ void GumballMachine::printStatus() const
 
     cout << "Mighty Gumball, Inc.\n"
          << "C++-enabled Standing Gumball Model #2004" << endl;
-    cout << "Inventario: " << GumballMachine::getCount() << " gumballs" << endl;
-    cout << "Estado: " << currentState->getName() << endl;
+    if (GumballMachine::getCount() > 0)
+    {
+        cout << "\033[32mInventario: \033[0m" << GumballMachine::getCount() << " gumballs" << endl;
+    }
+    else
+    {
+        cout << "\033[31mInventario: \033[0m" << GumballMachine::getCount() << " gumballs" << endl;
+    }
+    cout << "\033[33mEstado: \033[0m" << currentState->getName() << endl;
     cout << "----------------------------" << endl;
 }

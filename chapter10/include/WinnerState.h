@@ -40,7 +40,7 @@ public:
         else
         {
             std::cout << "--------------------------------" << std::endl;
-            std::cout << "ERES EL GANADOR!! Te llevas 2 chicles por el precio de 1" << std::endl;
+            std::cout << "\033[1;32mERES EL GANADOR!! Te llevas 2 chicles por el precio de 1\033[0m" << std::endl;
             std::cout << "--------------------------------" << std::endl;
             machine.releaseBall();
 
