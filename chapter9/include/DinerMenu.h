@@ -1,27 +1,21 @@
 #ifndef DINERMENU_H
 #define DINERMENU_H
 
-#include "MenuItem.h"
 #include "Menu.h"
-using namespace std;
+#include <array>
+#include <memory>
 
-class DinerMenu : public Menu<MenuItem **>
+class DinerMenu : public Menu
 {
 private:
-    static constexpr int MAX_ITEMS = 6;
-    MenuItem *menuItems[MAX_ITEMS]; // Arreglo de punteros a MenuItem
+    static const int MAX_ITEMS = 6;
+    std::array<std::shared_ptr<MenuItem>, MAX_ITEMS> items;
     int numberOfItems = 0;
 
 public:
-    using Iterator = MenuItem **;
-
-    ~DinerMenu(); // Destructor para liberar memoria
     DinerMenu();
-    void addItem(string name, string description, bool vegetarian, double price);
-
-    // Adaptamos los iteradores para que sean compatibles con Menu
-    Iterator begin() { return &menuItems[0]; }           // Direccion del primer elemento
-    Iterator end() { return &menuItems[numberOfItems]; } // Direccion de la ultima posicion
+    void addItem(std::shared_ptr<MenuItem> item) override;
+    void print() const override;
 };
 
 #endif

@@ -1,25 +1,19 @@
 #ifndef CAFEMENU_H
 #define CAFEMENU_H
 
-#include "MenuItem.h"
+#include "Menu.h"
 #include <map>
 #include <string>
 
-class CafeMenu
+class CafeMenu : public Menu
 {
 private:
-    map<string, MenuItem> menuItems;
+    std::map<std::string, std::shared_ptr<MenuItem>> items;
 
 public:
     CafeMenu();
-    void addItem(const string &name, const string &description, bool vegetarian, double price);
-    // Método para obtener los items (no necesario si usamos iteradores directamente)
-    map<std::string, MenuItem> &getMenuItems() { return menuItems; }
-
-    using Iterator = map<string, MenuItem>::iterator;
-
-    Iterator begin() { return menuItems.begin(); }
-    Iterator end() { return menuItems.end(); }
+    void addItem(std::shared_ptr<MenuItem> item) override;
+    void print() const override;
 };
 
 #endif

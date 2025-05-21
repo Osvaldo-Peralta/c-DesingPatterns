@@ -1,21 +1,17 @@
 /*
 > Definimos Menu como la interfaz comun para PancakeHouseMenu y DinerMenu
 */
+#pragma once
 
-#ifndef MENU_H
-#define MENU_H
+#include <vector>
+#include <memory>
+#include "MenuItem.h"
 
-#include <iterator>
-
-class MenuItem;
-
-template <typename Iter>
+// Declaramos una interfaz Menu
 class Menu
 {
 public:
     virtual ~Menu() = default;
-    virtual Iter begin() = 0;
-    virtual Iter end() = 0;
+    virtual void addItem(std::shared_ptr<MenuItem> item) = 0;
+    virtual void print() const = 0; // ¡Asegúrate de que sea público!
 };
-
-#endif

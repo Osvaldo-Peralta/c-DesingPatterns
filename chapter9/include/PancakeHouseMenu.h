@@ -3,22 +3,16 @@
 
 #include <vector>
 #include "Menu.h"
-#include "MenuItem.h"
 
-class PancakeHouseMenu : public Menu<vector<MenuItem>::iterator>
+class PancakeHouseMenu : public Menu
 {
 private:
-    vector<MenuItem> menuItems;
+    std::vector<std::shared_ptr<MenuItem>> items;
 
 public:
-    using Iterator = vector<MenuItem>::iterator; // Alias
-
     PancakeHouseMenu();
-    void addItem(string name, string description, bool vegetarian, double precio);
-
-    // Implementacion de la nueva interfaz Menu
-    Iterator begin() { return menuItems.begin(); }
-    Iterator end() { return menuItems.end(); }
+    void addItem(std::shared_ptr<MenuItem> item) override;
+    void print() const override;
 };
 
 #endif
